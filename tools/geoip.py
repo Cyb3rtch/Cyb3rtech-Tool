@@ -121,7 +121,7 @@ def main():
         try:
             choice = int(input('Choice >> '))
             if choice == 1:
-                os.system('python main.py')
+                os.system('python cyb3rtech.py')
                 break
             elif choice == 2:
                 ip_address = input("Adresse IP >> ")
