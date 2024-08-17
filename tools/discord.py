@@ -22,7 +22,7 @@ def main():
         try:
             choice = int(input('Choose >> '))
             if choice == 1:
-                os.system('python main.py')
+                os.system('python cyb3rtech.py')
             else:
                 print("\033[31m[!] >\033[0m Invalid choice \033[31m< [!]\033[0m")
         except ValueError:
