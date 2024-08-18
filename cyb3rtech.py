@@ -50,7 +50,7 @@ def main():
                 elif choice == 2:
                     os.system('python ./tools/geoip.py')
                 elif choice == 3:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./tools/web_cloner.py')
                 elif choice == 4:
                     os.system('python ./tools/username_tracker.py')
                 elif choice == 5:
