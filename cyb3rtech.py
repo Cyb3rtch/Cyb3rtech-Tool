@@ -50,19 +50,19 @@ def main():
                 elif choice == 2:
                     os.system('python ./tools/geoip.py')
                 elif choice == 3:
-                    os.system('python ./main.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 4:
-                    os.system('python ./main.py')
+                    os.system('python ./tools/username_tracker.py')
                 elif choice == 5:
-                    os.system('python ./main.py')
+                    os.system('python ./tools/phone_number.py')
                 elif choice == 6:
-                    os.system('python ./main.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 7:
-                    os.system('python ./main.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 8:
-                    os.system('python ./main.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 9:
-                    os.system('python ./main.py')
+                    os.system('python ./cyb3rtech.py')
                 else:
                     raise ValueError
             choice_script(choice)
