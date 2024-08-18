@@ -3,7 +3,7 @@
 ## Features
 
 - [x] IP Info
-- [ ] Web Cloner
+- [x] Web Cloner
 - [x] Username Tracker
 - [x] Phone Number Lookup
 - [ ] Mail Info
