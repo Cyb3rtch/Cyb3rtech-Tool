@@ -1,2 +1,4 @@
 requests
 ipwhois
+whois
+discord
