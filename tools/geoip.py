@@ -94,25 +94,26 @@ def reverse_dns(ip_address):
 
 def show_menu():
     menu = """
-               ▄████ ▓█████  ▒█████   ██▓ ██▓███  
-               ██▒ ▀█▒▓█   ▀ ▒██▒  ██▒▓██▒▓██░  ██▒
-               ▒██░▄▄▄░▒███   ▒██░  ██▒▒██▒▓██░ ██▓▒
-               ░▓█  ██▓▒▓█  ▄ ▒██   ██░░██░▒██▄█▓▒ ▒
-               ░▒▓███▀▒░▒████▒░ ████▓▒░░██░▒██▒ ░  ░
-                ░▒   ▒ ░░ ▒░ ░░ ▒░▒░▒░ ░▓  ▒▓▒░ ░  ░
-                 ░   ░  ░ ░  ░  ░ ▒ ▒░  ▒ ░░▒ ░     
-               ░ ░   ░    ░   ░ ░ ░ ▒   ▒ ░░░       
-                     ░    ░  ░    ░ ░   ░           
-                                     ║
-                           ╔═══════════════════════╗
-                           ║ [1] Back to main      ║
-                           ║ [2] IP Info           ║
-                           ║ [3] IP Ping           ║
-                           ║ [4] Port Scan         ║
-                           ║ [5] Reverse DNS       ║
-                           ╚═══════════════════════╝                          
-    """
-    print(f"\033[31m{menu}\033[0m")
+          ██▓ ██▓███      ██▓     ▒█████   ▒█████   ██ ▄█▀ █    ██  ██▓███
+          ▓██▒▓██░  ██▒   ▓██▒    ▒██▒  ██▒▒██▒  ██▒ ██▄█▒  ██  ▓██▒▓██░  ██▒
+          ▒██▒▓██░ ██▓▒   ▒██░    ▒██░  ██▒▒██░  ██▒▓███▄░ ▓██  ▒██░▓██░ ██▓▒
+          ░██░▒██▄█▓▒ ▒   ▒██░    ▒██   ██░▒██   ██░▓██ █▄ ▓▓█  ░██░▒██▄█▓▒ ▒
+          ░██░▒██▒ ░  ░   ░██████▒░ ████▓▒░░ ████▓▒░▒██▒ █▄▒▒█████▓ ▒██▒ ░  ░
+          ░▓  ▒▓▒░ ░  ░   ░ ▒░▓  ░░ ▒░▒░▒░ ░ ▒░▒░▒░ ▒ ▒▒ ▓▒░▒▓▒ ▒ ▒ ▒▓▒░ ░  ░
+          ▒ ░░▒ ░        ░ ░ ▒  ░  ░ ▒ ▒░   ░ ▒ ▒░ ░ ░▒ ▒░░░▒░ ░ ░ ░▒ ░
+          ▒ ░░░            ░ ░   ░ ░ ░ ▒  ░ ░ ░ ▒  ░ ░░ ░  ░░░ ░ ░ ░░
+          ░                  ░  ░    ░ ░      ░ ░  ░  ░      ░
+"""
+    menu2 = """
+[0] Back to main
+[1] IP Info
+[2] IP Ping
+[3] Port Scan
+[4] Reverse DNS
+"""
+
+    print(f"\033[31m{menu}")
+    print(f"\033[31m{menu2}\033[0m")
 
 def main():
     while True:
@@ -120,19 +121,19 @@ def main():
         show_menu()
         try:
             choice = int(input('Choice >> '))
-            if choice == 1:
+            if choice == 0:
                 os.system('python cyb3rtech.py')
                 break
-            elif choice == 2:
+            elif choice == 1:
                 ip_address = input("Adresse IP >> ")
                 ip_info(ip_address)
-            elif choice == 3:
+            elif choice == 2:
                 ip_address = input("Adresse IP >> ")
                 ping_ip(ip_address)
-            elif choice == 4:
+            elif choice == 3:
                 ip_address = input("Adresse IP >> ")
                 port_scan(ip_address)
-            elif choice == 5:
+            elif choice == 4:
                 ip_address = input("Adresse IP >> ")
                 reverse_dns(ip_address)
             else:
@@ -142,4 +143,4 @@ def main():
         input("\nAppuyez sur Entrée pour retourner au menu...\033[0m")
 
 if __name__ == "__main__":
-    main()
+    main()    
