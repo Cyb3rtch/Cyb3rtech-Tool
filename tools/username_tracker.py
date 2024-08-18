@@ -82,6 +82,8 @@ def main():
                 break
             elif choice == 1:
                 username = input('\033[31mPseudo >> \033[0m')
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}\033[0m")
                 check_username(username)
             else:
                 print("\033[31m[!]\033[0m Invalid choice \033[31m[!]\033[0m")
