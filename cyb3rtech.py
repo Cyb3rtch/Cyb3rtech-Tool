@@ -58,7 +58,7 @@ def main():
                 elif choice == 6:
                     os.system('python ./cyb3rtech.py')
                 elif choice == 7:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./tools/sql_vulnerability.py')
                 elif choice == 8:
                     os.system('python ./cyb3rtech.py')
                 elif choice == 9:
