@@ -62,7 +62,7 @@ def main():
                 elif choice == 8:
                     os.system('python ./cyb3rtech.py')
                 elif choice == 9:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./tools/discord_raid.py')
                 else:
                     raise ValueError
             choice_script(choice)
