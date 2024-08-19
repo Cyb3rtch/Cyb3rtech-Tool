@@ -9,7 +9,7 @@
 - [ ] Mail Info
 - [x] SQL Vulnerability
 - [ ] Dox Tracker
-- [ ] Discord Raid
+- [x] Discord Raid
       
 Others soon...
 
