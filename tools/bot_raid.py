@@ -14,12 +14,12 @@ menu = """
            ░░   ░   ░   ▒    ▒ ░ ░ ░  ░
                ░           ░  ░ ░     ░
                         ░
+              >> (Bot Verison) <<
 """
 menu2 = """
 [0] Back to main
 [1] Nuke
 [2] Message Spam
-[3] Webhooks Spam
 [4] Delete Channel
 [5] Create Channel
 [6] Create Role
@@ -48,11 +48,6 @@ def spam_channel(channel_id, headers, spam_message):
         requests.post(f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=headers, json={"content": spam_message})
         time.sleep(0.5)
 
-def spam_webhook(webhook_url, spam_message):
-    while True:
-        requests.post(webhook_url, json={"content": spam_message})
-        time.sleep(0.5)
-
 def nuke(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
     channel_count = int(input('\033[31mNumber of Channels to Create >> \033[0m'))
@@ -63,11 +58,7 @@ def nuke(token):
 
     headers = {"Authorization": f"Bot {token}"}
 
-    requests.patch(f"https://discord.com/api/v9/guilds/{guild_id}", headers=headers, json={"name": new_name})
-
-    icon_data = requests.get(new_icon_url).content
-    files = {'icon': ('icon.png', icon_data, 'image/png')}
-    requests.patch(f"https://discord.com/api/v9/guilds/{guild_id}", headers=headers, files=files)
+    requests.patch(f"https://discord.com/api/v9/guilds/{guild_id}", headers=headers, json={"name": new_name, "icon": new_icon_url})
 
     channels = requests.get(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers).json()
     for channel in channels:
@@ -104,16 +95,6 @@ def message_spam(token):
 
     for channel in channels:
         threading.Thread(target=spam_channel, args=(channel['id'], headers, spam_message)).start()
-
-def webhooks_spam(token):
-    channel_id = input('\033[31mChannel ID >> \033[0m')
-    spam_message = input('\033[31mMessage to Spam >> \033[0m')
-    print(f"\033[31m[?]\033[0m Webhooks Spam en cours \033[31m[?]\033[0m")
-
-    headers = {"Authorization": f"Bot {token}"}
-    webhook_url = create_webhook(channel_id, headers)
-    if webhook_url:
-        threading.Thread(target=spam_webhook, args=(webhook_url, spam_message)).start()
 
 def delete_channel(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
@@ -181,12 +162,6 @@ def main():
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     message_spam(token)
-            elif choice == 3:
-                os.system('cls' if os.name == 'nt' else 'clear')
-                print(f"\033[31m{menu}")
-                token = input('\033[31mToken >> \033[0m')
-                if is_bot_token_valid(token):
-                    webhooks_spam(token)
             elif choice == 4:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}")
@@ -212,10 +187,11 @@ def main():
                 if is_bot_token_valid(token):
                     delete_role(token)
             else:
-                print("\033[31m[!]\033[0m Invalid choice \033[31m[!]\033[0m")
+                print("\033[31m[!] Invalid choice\033[0m")
+                time.sleep(1)
         except ValueError:
-            print("\033[31mPlease enter a valid number\033[0m")
-        input("\nPress Enter to return to the menu...\033[0m")
+            print("\033[31m[!] Please enter a number\033[0m")
+            time.sleep(1)
 
 if __name__ == "__main__":
     main()
