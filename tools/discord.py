@@ -17,7 +17,7 @@ menu = """
 menu2 = """
 [0] Back to main
 """
-def show_menu
+def show_menu():
     print(f"\033[31m{menu}")
     print(f"{menu2}\033[0m")
    
