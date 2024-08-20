@@ -32,7 +32,7 @@ def main():
         try:
             choice = int(input('Choose >> '))
             if choice == 0:
-              os.system('python cyb3rtech.py')
+                os.system('python cyb3rtech.py')
                 break
             else:
                 print("\033[31m[!] >\033[0m Invalid choice \033[31m< [!]\033[0m")
