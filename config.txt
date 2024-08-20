@@ -1,0 +1,6 @@
+name_tool=Cyb3rtech Tool
+version_tool=1.0.5
+coding_tool=Python / Batch
+creator=Cyb3rtech
+discord_server=discord.gg/mP6NvAgF2q
+github_tool=github.com/Cyb3rtch/Cyb3rtech-Tool
