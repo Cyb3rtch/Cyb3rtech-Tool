@@ -14,8 +14,8 @@ menu = """
 """
 menu2 = """
 [0] Back to main
-[1] SelfBot Raid
-[2] Bot Raid
+[1] Bot Raid #(BEST)
+[2] SelfBot Raid
 """
 
 def show_menu():
@@ -32,9 +32,9 @@ def main():
                 os.system('python cyb3rtech.py')
                 break
             elif choice == 1:
-                os.system('python ./tools/self_raid.py')
+                os.system('python ./tools/bot_raid.py')
             elif choice == 2:
-                os.system('python ./tools/bot_raid.py')                
+                os.system('python ./tools/self_raid.py')                
             else:
                 print("\033[31m[!]\033[0m Invalid choice \033[31m[!]\033[0m")
         except ValueError:
