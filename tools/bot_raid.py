@@ -20,10 +20,10 @@ menu2 = """
 [0] Back to main
 [1] Nuke
 [2] Message Spam
-[4] Delete Channel
-[5] Create Channel
-[6] Create Role
-[7] Delete Role
+[3] Delete Channel
+[4] Create Channel
+[5] Create Role
+[6] Delete Role
 """
 
 def show_menu():
@@ -162,25 +162,25 @@ def main():
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     message_spam(token)
-            elif choice == 4:
+            elif choice == 3:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     delete_channel(token)
-            elif choice == 5:
+            elif choice == 4:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     create_channel(token)
-            elif choice == 6:
+            elif choice == 5:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
                 if is_bot_token_valid(token):
                     create_role(token)
-            elif choice == 7:
+            elif choice == 6:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}")
                 token = input('\033[31mToken >> \033[0m')
