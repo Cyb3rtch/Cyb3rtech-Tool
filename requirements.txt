@@ -2,4 +2,4 @@ requests
 pywebcopy
 ipwhois
 whois
-discord
+phonenumbers
