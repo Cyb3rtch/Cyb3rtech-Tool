@@ -4,14 +4,13 @@
 ![GitHub License](https://img.shields.io/github/license/Cyb3rtch/Cyb3rtech-Tool) ![GitHub Last Commit](https://img.shields.io/github/last-commit/Cyb3rtch/Cyb3rtech-Tool)
 ## > 📊 Fonctionnalités
 
-- [x] IP Info
-- [x] Web Cloner
-- [x] Username Tracker
-- [x] Phone Number Lookup
-- [ ] Mail Info
-- [x] SQL Vulnerability
-- [ ] Dox Tracker
-- [x] Discord Raid
+- [x] 📍 IP Info
+- [x] 🌐 Web Cloner
+- [x] 👤 Username Tracker
+- [x] 📞 Phone Number Lookup
+- [x] 📩 Mail Info
+- [x] 💉 SQL Vulnerability
+- [x] ☢️ Discord Raid
       
 ## > 📸 Pictures
 
