@@ -103,7 +103,7 @@ def delete_channel(token):
     channels = requests.get(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers).json()
     for channel in channels:
         requests.delete(f"https://discord.com/api/v9/channels/{channel['id']}", headers=headers)
-        time.sleep(0.1)  # Faster deletion
+        time.sleep(0.1)
 
 def create_channel(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
@@ -115,7 +115,7 @@ def create_channel(token):
     for _ in range(channel_count):
         channel_data = {"name": channel_name, "type": 0}
         requests.post(f"https://discord.com/api/v9/guilds/{guild_id}/channels", headers=headers, json=channel_data)
-        time.sleep(0.1)  # Faster creation
+        time.sleep(0.1)
 
 def create_role(token):
     guild_id = input('\033[31mGuild ID >> \033[0m')
