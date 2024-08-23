@@ -3,3 +3,4 @@ pywebcopy
 ipwhois
 whois
 phonenumbers
+dnspython
