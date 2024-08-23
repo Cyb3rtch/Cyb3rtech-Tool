@@ -24,8 +24,7 @@ def show_menu():
     print(f"\033[31m{menu}\033[0m")
     print(f"\033[31m{menu2}\033[0m")
 
-def track_phone_number(phone_number):
-    # Remove spaces and other non-digit characters
+def phone_number(phone_number):
     phone_number = ''.join(filter(str.isdigit, phone_number))
     try:
         parsed_number = phonenumbers.parse(f"+{phone_number}", None)
@@ -33,7 +32,7 @@ def track_phone_number(phone_number):
             print("\033[31m[!] Invalid phone number format [!]\033[0m")
             return
         
-        number_info = {
+        info = {
             "Country": geocoder.description_for_number(parsed_number, 'en'),
             "ISP": carrier.name_for_number(parsed_number, 'en'),
             "Time Zone": ", ".join(timezone.time_zones_for_number(parsed_number)),
@@ -46,7 +45,7 @@ def track_phone_number(phone_number):
         
         print(f"\033[31mRecherche pour le numéro '+{phone_number}'..\n\033[0m")
         time.sleep(2)
-        for key, value in number_info.items():
+        for key, value in info.items():
             print(f"\033[31m{key}: {value}\033[0m")
     
     except phonenumbers.NumberParseException:
@@ -65,7 +64,7 @@ def main():
                 phone_number = input('\033[31mPhone Number >> \033[0m')
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}\033[0m")
-                track_phone_number(phone_number)
+                phone_number(phone_number)
             else:
                 print("\033[31m[!]\033[0m Invalid choice \033[31m[!]\033[0m")
         except ValueError:
