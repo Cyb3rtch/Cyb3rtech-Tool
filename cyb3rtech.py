@@ -18,7 +18,7 @@ def main():
                                                     ║
                                            ╔════════════════╗                          ╔═══════════════════╗
                                            ║    Cyb3rtech   ║                          ║                   ║
-                                           ║   Beta v1.0.1  ║                          ║ [0] > Discord Web ║
+                                           ║   Beta v1.0.2  ║                          ║ [0] > Discord Web ║
                                            ╚════════════════╝                          ║                   ║
                                                     ║                                  ╚═══════════════════╝
                                                     ║                                              ║
@@ -32,7 +32,7 @@ def main():
             ║ [5] > Phone Number Lookup            ║ ║ [14] > Discord Token Spammer         ║
             ║ [6] > Mail Info                      ║ ║ [15] > Discord Token Generator       ║
             ║ [7] > SQL Vulnerability              ║ ║ [16] > Discord Nitro Generator       ║
-            ║ [8] > Dox Tracker                    ║ ║ [17] > Discord Server Info           ║
+            ║ [8] > N/A (SOON)                     ║ ║ [17] > Discord Server Info           ║
             ║ [9] > Discord Raid                   ║ ║ [18] > Next Page (1/2)               ║
             ╚══════════════════════════════════════╝ ╚══════════════════════════════════════╝
     """
@@ -56,7 +56,7 @@ def main():
                 elif choice == 5:
                     os.system('python ./tools/phone_number.py')
                 elif choice == 6:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./tools/mail_info.py')
                 elif choice == 7:
                     os.system('python ./tools/sql_vulnerability.py')
                 elif choice == 8:
