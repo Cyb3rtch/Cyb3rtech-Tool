@@ -1,4 +1,4 @@
-# ⚡️ Cyb3rtech Tools
+# ⚡️ Cyb3rtech Tools || [discord](https://discord.gg/mP6NvAgF2q)
 
 ![GitHub Stars](https://img.shields.io/github/stars/Cyb3rtch/Cyb3rtech-Tool?style=social) ![GitHub Forks](https://img.shields.io/github/forks/Cyb3rtch/Cyb3rtech-Tool?style=social) ![GitHub Issues](https://img.shields.io/github/issues/Cyb3rtch/Cyb3rtech-Tool)
 ![GitHub License](https://img.shields.io/github/license/Cyb3rtch/Cyb3rtech-Tool) ![GitHub Last Commit](https://img.shields.io/github/last-commit/Cyb3rtch/Cyb3rtech-Tool)
