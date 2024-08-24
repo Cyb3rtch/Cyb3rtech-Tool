@@ -18,5 +18,8 @@
     <img src="https://cdn.discordapp.com/attachments/1274370571173625856/1274784761977507860/cyb3rtechtool.jpg?ex=66c38353&is=66c231d3&hm=e43199f7f3db39bd819238ea47f0146a04beb35587c90b4ccc8047273a64b461&" alt="Screen Tool" style="width:100%; height:300px; object-fit:cover;"/>
 </div>
 
+## > ⚠️ Disclaimer
+Cyb3rTech Tool est destiné à une utilisation éthique et responsable. Toute utilisation illégale, malveillante ou non autorisée est strictement interdite. Les utilisateurs sont entièrement responsables de l'usage qu'ils font de cet outil. Le créateur de Cyb3rTech Tool ne pourra être tenu responsable de toute action non conforme à ces principes ou à la législation en vigueur.
+
 ## > ⚖️  Droits d'auteur
 MIT License © 2024 Cyb3rtech Tool. See LICENSE file for details.
