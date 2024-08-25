@@ -18,7 +18,7 @@ def main():
                                                     ║
                                            ╔════════════════╗                          ╔═══════════════════╗
                                            ║    Cyb3rtech   ║                          ║                   ║
-                                           ║   Beta v1.0.2  ║                          ║ [0] > Discord Web ║
+                                           ║   Beta v1.0.0  ║                          ║ [0] > Discord Web ║
                                            ╚════════════════╝                          ║                   ║
                                                     ║                                  ╚═══════════════════╝
                                                     ║                                              ║
@@ -27,13 +27,14 @@ def main():
             ╔══════════════════════════════════════╗ ╔══════════════════════════════════════╗      ║
             ║ [1] > Tool Info                      ║ ║ [10] > Discord Token Info            ║      ║
             ║ [2] > IP Info                        ║ ║ [11] > Discord Token Nuker           ║══════╝
-            ║ [3] > Web Cloner                     ║ ║ [12] > Discord Token Joiner          ║
-            ║ [4] > Username Tracker               ║ ║ [13] > Discord Token BruteForce      ║
-            ║ [5] > Phone Number Lookup            ║ ║ [14] > Discord Token Spammer         ║
+            ║ [3] > DDOS (#soon)                   ║ ║ [12] > Discord Token Joiner          ║
+            ║ [4] > Mass Report (#soon)            ║ ║ [13] > Discord Token BruteForce      ║
+            ║ [5] > Phone Number Lookup            ║ ║ [14] > N/A                           ║
             ║ [6] > Mail Info                      ║ ║ [15] > Discord Token Generator       ║
-            ║ [7] > SQL Vulnerability              ║ ║ [16] > Discord Nitro Generator       ║
-            ║ [8] > N/A (SOON)                     ║ ║ [17] > Discord Server Info           ║
-            ║ [9] > Discord Raid                   ║ ║ [18] > Next Page (1/2)               ║
+            ║ [7] > Username Tracker               ║ ║ [16] > Discord Nitro Generator       ║
+            ║ [8] > SQL Vulnerability              ║ ║ [17] > Discord Server Info           ║
+            ║ [9] > Discord Raid                   ║ ║ [18] > Web Cloner (#soon)            ║
+            ║ [10] > Dmall                         ║ ║ [19] > Next Page (1/2 (#soon)        ║
             ╚══════════════════════════════════════╝ ╚══════════════════════════════════════╝
     """
 
@@ -50,19 +51,39 @@ def main():
                 elif choice == 2:
                     os.system('python ./tools/geoip.py')
                 elif choice == 3:
-                    os.system('python ./tools/web_cloner.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 4:
-                    os.system('python ./tools/username_tracker.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 5:
                     os.system('python ./tools/phone_number.py')
                 elif choice == 6:
                     os.system('python ./tools/mail_info.py')
                 elif choice == 7:
-                    os.system('python ./tools/sql_vulnerability.py')
+                    os.system('python ./tools/username_tracker.py')
                 elif choice == 8:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./tools/sql_vulnerability.py')
                 elif choice == 9:
                     os.system('python ./tools/discord_raid.py')
+                elif choice == 10:
+                    os.system('python ./tools/dmall.py')
+                elif choice == 11:
+                    os.system('python ./tools/discord_token_nuker.py')
+                elif choice == 12:
+                    os.system('python ./tools/discord_token_joiner.py')
+                elif choice == 13:
+                    os.system('python ./tools/discord_token_bruteforce.py')
+                elif choice == 14:
+                    os.system('python ./cyb3rtech.py')
+                elif choice == 15:
+                    os.system('python ./tools/discord_token_generator.py')
+                elif choice == 16:
+                    os.system('python ./tools/discord_nitro_generator.py')
+                elif choice == 17:
+                    os.system('python ./tools/discord_server_info.py')
+                elif choice == 18:
+                    os.system('python ./tools/web_cloner.py')
+                elif choice == 19:
+                    os.system('python ./nextpage.py')
                 else:
                     raise ValueError
             choice_script(choice)
