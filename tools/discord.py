@@ -20,7 +20,7 @@ menu2 = """
 
 def show_menu():
     print(f"\033[31m{menu}")
-    print(f"{menu2}\033[0m")
+    print(f"{menu2}")
 
 time.sleep(1)
 webbrowser.open('https://discord.gg/mP6NvAgF2q')
@@ -30,7 +30,7 @@ def main():
         os.system('cls' if os.name == 'nt' else 'clear')
         show_menu()
         try:
-            choice = int(input('Choose >> '))
+            choice = int(input('Choise >> '))
             if choice == 0:
                 os.system('python cyb3rtech.py')
                 break
