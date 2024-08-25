@@ -1,53 +1,61 @@
 @echo off
-echo Installation des modules..
+setlocal
+echo Installation des modules...
 echo.
 
+set "ARCHITECTURE=64"
 if "%PROCESSOR_ARCHITECTURE%"=="x86" (
-    set ARCHITECTURE=32
-) else (
-    set ARCHITECTURE=64
+    if not defined ProgramFiles(x86) set "ARCHITECTURE=32"
 )
 
-set PYTHON_VERSION=3.11.5
-set PYTHON_EXE=python-%PYTHON_VERSION%-amd64.exe
+set "PYTHON_VERSION=3.11.5"
+set "PYTHON_EXE=python-%PYTHON_VERSION%-amd64.exe"
 
-where python >nul 2>nul
-if %errorlevel% neq 0 (
-    echo Python n'est pas installer installation en cours..
-    echo.
+if "%ARCHITECTURE%"=="32" set "PYTHON_EXE=python-%PYTHON_VERSION%-win32.exe"
 
-    if %ARCHITECTURE%==32 (
-        set PYTHON_EXE=python-%PYTHON_VERSION%-win32.exe
-    )
-    powershell -Command "Invoke-WebRequest https://www.python.org/ftp/python/%PYTHON_VERSION%/%PYTHON_EXE% -OutFile %PYTHON_EXE%"
-    %PYTHON_EXE% /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
-
-    where python >nul 2>nul
-    if %errorlevel% neq 0 (
-        echo Installation de python impossible.
-        pause
+where python >nul 2>nul || (
+    echo Python non trouvé. Installation...
+    powershell -Command "Invoke-WebRequest https://www.python.org/ftp/python/%PYTHON_VERSION%/%PYTHON_EXE% -OutFile %PYTHON_EXE%" && (
+        %PYTHON_EXE% /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
+        if errorlevel 1 (
+            echo Échec de l'installation de Python.
+            del "%PYTHON_EXE%"
+            exit /b 1
+        )
+        del "%PYTHON_EXE%"
+    ) || (
+        echo Échec du téléchargement de Python.
         exit /b 1
     )
+) || echo Python déjà installé.
 
-    del %PYTHON_EXE%
-)
-
-where pip >nul 2>nul
-if %errorlevel% neq 0 (
-    echo pip is not installed. Installing pip...
-    powershell -Command "Invoke-WebRequest https://bootstrap.pypa.io/get-pip.py -OutFile get-pip.py"
-    python get-pip.py
-    del get-pip.py
-)
+where pip >nul 2>nul || (
+    echo pip non trouvé. Installation...
+    powershell -Command "Invoke-WebRequest https://bootstrap.pypa.io/get-pip.py -OutFile get-pip.py" && (
+        python get-pip.py
+        del get-pip.py
+        if errorlevel 1 (
+            echo Échec de l'installation de pip.
+            exit /b 1
+        )
+    ) || (
+        echo Échec du téléchargement de pip.
+        exit /b 1
+    )
+) || echo pip déjà installé.
 
 if exist requirements.txt (
-    echo Installing packages from requirements.txt...
+    echo Installation des packages...
     pip install -r requirements.txt
+    if errorlevel 1 (
+        echo Échec de l'installation des packages.
+        exit /b 1
+    )
 ) else (
-    echo le fichier requirements.txt n'existe pas'
-    pause
+    echo requirements.txt non trouvé.
     exit /b 1
 )
 
-echo Setup complete.
+echo Configuration terminée.
 pause
+endlocal
