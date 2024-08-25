@@ -81,7 +81,7 @@ def main():
                 elif choice == 17:
                     os.system('python ./tools/discord_nitro_generator.py')
                 elif choice == 18:
-                    os.system('python ./tools/cyb3rtech.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 19:
                     os.system('python ./tools/web_cloner.py')
                 elif choice == 20:
