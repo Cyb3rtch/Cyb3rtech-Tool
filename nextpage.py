@@ -25,9 +25,8 @@ def main():
                              ╔══════════════════════╩══════════════════════╗                       ║
                              ║                                             ║                       ║
             ╔══════════════════════════════════════╗ ╔══════════════════════════════════════╗      ║
-            ║ [20] > Previous Page (2/2)           ║ ║ [30] >                               ║      ║
-            ║ [21] >                               ║ ║ [31] >                               ║══════╝
-            ║ [22] >                               ║ ║ [32] >                               ║
+            ║ [21] > Previous Page (2/2)           ║ ║ [31] >                               ║      ║
+            ║ [22] >                               ║ ║ [32] >                               ║══════╝
             ║ [23] >                               ║ ║ [33] >                               ║
             ║ [24] >                               ║ ║ [34] >                               ║
             ║ [25] >                               ║ ║ [35] >                               ║
@@ -35,6 +34,7 @@ def main():
             ║ [27] >                               ║ ║ [37] >                               ║
             ║ [28] >                               ║ ║ [38] >                               ║
             ║ [29] >                               ║ ║ [39] >                               ║
+            ║ [30] >                               ║ ║ [40] >                               ║
             ╚══════════════════════════════════════╝ ╚══════════════════════════════════════╝
 """
     
@@ -46,42 +46,46 @@ def main():
             def choice_script(choice):
                 if choice == 0:
                     os.system('python ./tools/discord.py')
-                elif choice == 19:
-                    os.system('python ./cyb3rtech.py')
-                elif choice == 20:
-                    os.system('python ./cyb3rtech.py')
                 elif choice == 21:
                     os.system('python ./cyb3rtech.py')
                 elif choice == 22:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 23:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 24:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 25:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 26:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 27:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 28:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 29:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 30:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 31:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 32:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 33:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 34:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 35:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
                 elif choice == 36:
-                    os.system('python ./cyb3rtech.py')
+                    os.system('python ./nextpage.py')
+                elif choice == 37:
+                    os.system('python ./nextpage.py')
+                elif choice == 38:
+                    os.system('python ./nextpage.py')
+                elif choice == 39:
+                    os.system('python ./nextpage.py')
+                elif choice == 40:
+                    os.system('python ./nextpage.py')
                 else:
                     raise ValueError
             choice_script(choice)
