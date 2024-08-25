@@ -71,7 +71,7 @@ def main():
                 elif choice == 12:
                     os.system('python ./tools/discord_token_nuker.py')
                 elif choice == 13:
-                    os.system('python ./tools/discord_token_joiner.py')
+                    os.system('python ./cyb3rtech.py')
                 elif choice == 14:
                     os.system('python ./tools/discord_token_bruteforce.py')
                 elif choice == 15:
