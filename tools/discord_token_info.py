@@ -140,7 +140,7 @@ def main():
             elif choice == 1:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"\033[31m{menu}")
-                token_discord = input('\033[31mEnter Discord Token: \033[0m')
+                token_discord = input('\033[31mToken >> \033[0m')
                 token_info(token_discord)
             else:
                 print("\033[31m[!] > Invalid choice < [!]\033[0m")
