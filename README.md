@@ -5,12 +5,16 @@
 ## > 📊 Fonctionnalités
 
 - [x] 📍 IP Info
-- [x] 🌐 Web Cloner
-- [x] 👤 Username Tracker
+- [ ] 🛜 DDoS
+- [ ] 🚫 Mass Report
 - [x] 📞 Phone Number Lookup
 - [x] 📩 Mail Info
+- [x] 👤 Username Tracker
 - [x] 💉 SQL Vulnerability
 - [x] ☢️ Discord Raid
+- [x] 👥️ Dmall
+- [x] 🎭 Discord Token Info, Nuker, Bruteforce, Nitro Generator
+- [ ] 🌐 Web Cloner 
       
 ## > 📸 Pictures
 
