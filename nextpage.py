@@ -5,6 +5,11 @@ import shutil
 def get_terminal_size():
     return shutil.get_terminal_size()
 
+def center_text(text, width):
+    lines = text.splitlines()
+    centered_lines = [line.center(width) for line in lines]
+    return "\n".join(centered_lines)
+
 def blinking():
     text = """
 ⠀⠀⠀⠀⠀⠀⠀⢀⠆⠀⢀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡀⠀⠰⡀⠀⠀⠀⠀⠀⠀⠀
