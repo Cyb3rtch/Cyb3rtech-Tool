@@ -56,13 +56,6 @@ def center_text(text, width):
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-    blinking()
-
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-    def main():
-    os.system('cls' if os.name == 'nt' else 'clear')
     
     blinking()
     
