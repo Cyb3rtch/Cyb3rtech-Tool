@@ -42,7 +42,7 @@ def blinking():
     terminal_size = get_terminal_size()
     centered_text = center_text(text, terminal_size.columns)
     
-    for _ in range(5):
+    for _ in range(3):
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"\033[31m{centered_text}\033[0m")
         time.sleep(0.5)
